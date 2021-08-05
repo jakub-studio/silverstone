@@ -1,6 +1,5 @@
 const { merge } = require("webpack-merge");
 const { scriptDebug, highlight, defineAliases, scriptError } = require("../utils");
-const { configName } = require("./configSymbols");
 
 const baseConfig = require("./base.config");
 const electronBaseConfig = require("./target/electron_base.config");
@@ -29,7 +28,7 @@ defineAliases(targetConfigs, [
 const _getConfig = (obj, objName, property) => {
 	if (!obj) return scriptError("No object (arg 0) was provided to getPreset");
 	if (obj[property]) {
-		scriptDebug(`${objName} config: ${highlight(obj[property][configName])}`);
+		scriptDebug(`${objName} config: ${highlight(obj[property].name)}`);
 		return obj[property]
 	} else {
 		scriptError(`'${highlight(property)}' ${objName} config doesn't exist`, `Available configs: ${Object.keys(obj).map(highlight).join(", ")}`);
@@ -56,7 +55,7 @@ const defaultConfigName = "Unnamed Config";
 
 exports.getTargetName = target => {
 	try {
-		return targetConfigs[target][configName] || defaultConfigName
+		return targetConfigs[target].name || defaultConfigName
 	} catch {
 		return defaultConfigName;
 	}

@@ -14,6 +14,7 @@
     "start": "electron .",
     "build": "node silverstone-scripts build",
     "start-web": "node silverstone-scripts start-web",
+    "security": "node silverstone-scripts security",
     "cli-test": "node silverstone-scripts/cli/p-test",
     "__do_not_use_exec_build__": "node silverstone-scripts/cmds/build/exec_build.js"
   },
@@ -28,6 +29,7 @@
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/preset-react": "^7.12.10",
     "@babel/preset-typescript": "^7.12.7",
+    "@doyensec/electronegativity": "^1.7.0",
     "@types/react": "^16.9.56",
     "@types/react-dom": "^16.9.9",
     "autoprefixer": "^10.1.0",
@@ -38,6 +40,7 @@
     "fibers": "^5.0.0",
     "html-webpack-plugin": "^5.0.0-beta.5",
     "minimist": "^1.2.5",
+    "ms": "^2.1.3",
     "open": "^7.3.1",
     "postcss": "^8.2.2",
     "postcss-loader": "^4.1.0",

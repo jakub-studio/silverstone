@@ -15,7 +15,7 @@
 	},
 	"include": [
 		"src",
-		"types.d.ts"
+		"silverstone.d.ts"
 	],
 	"exclude": [
 		"dist",

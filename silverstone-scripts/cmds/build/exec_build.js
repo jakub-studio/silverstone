@@ -1,6 +1,8 @@
 const webpack = require("webpack");
 const { merge } = require("webpack-merge");
+const { success } = require("../../utils");
 const { getConfig } = require("../../webpack-configs");
+const ms = require("ms");
 
 const args = (() => {
 	const split = process.argv.slice(2).map(s => s.split("="));
@@ -38,12 +40,18 @@ const exec = (opts, onDispatch) => {
 		]}
 	));
 
-	compiler.run((err, stats) => {
+	compiler.run((err, s) => {
 		if (err) return console.error(err);
-		console.log(stats.toString({
-			colors: true,
-			chunks: false
-		}))
+		const stats = s.toJson({
+			chunks: false,
+			chunkGroups: false,
+			assets: false,
+			entrypoints: false,
+			modules: false,
+			children: false,
+		});
+
+		console.log(`Built ${success(stats.name)} successfully in ${success(ms(stats.time, { long: true }))}. (Hash: ${stats.hash})`)
 	})
 }
 

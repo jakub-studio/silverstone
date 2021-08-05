@@ -11,3 +11,4 @@ Technologies featured:
 - Webpack
 - Babel
 - PostCSS
+- Sass

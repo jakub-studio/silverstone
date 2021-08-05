@@ -1,11 +1,14 @@
-/* Example API */
-interface PreloadApi {
-	getNodeVersion(): string;
-	getChromeVersion(): string;
-	getElectronVersion(): string;
-}
+/*
 
-declare var preload_api: PreloadApi;
+!!! WARNING! READ BEFORE EDITING / DELETING !!!
+The declarations below are used by silverstone framework and are neccessary in order for your app to
+pass type checks. If you remove them your typescript check will fail as the global variables introduced
+by silverstone will no longer be declared.
+
+If you wish to change the names of the variables, you must change them here and in the configs were they
+are defined. Otherwise, you should leave this file alone unless you know exactly what you are doing.
+
+*/
 
 /* Files ending with .include (e.g. 'helloworld.txt.include') will be included with raw-loader */
 declare module '*.include' {

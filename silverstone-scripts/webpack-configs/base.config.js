@@ -14,7 +14,7 @@ const cssLoaders = [
 
 module.exports = {
 	name: "Base",
-	devtool: "source-map",
+	devtool: false,
 	module: {
 		rules: [{
 			test: /\.tsx?$/i,
