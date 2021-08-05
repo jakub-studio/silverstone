@@ -19,7 +19,7 @@
     "__do_not_use_exec_build__": "node silverstone-scripts/cmds/build/exec_build.js"
   },
   "dependencies": {
-    "electron": "^10.1.5",
+    "electron": "^10.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "tailwindcss": "^2.0.1"
@@ -42,7 +42,7 @@
     "minimist": "^1.2.5",
     "ms": "^2.1.3",
     "open": "^7.3.1",
-    "postcss": "^8.2.2",
+    "postcss": "^8.2.10",
     "postcss-loader": "^4.1.0",
     "sass": "^1.32.5",
     "sass-loader": "^10.1.1",
