@@ -19,7 +19,7 @@
     "__do_not_use_exec_build__": "node silverstone-scripts/cmds/build/exec_build.js"
   },
   "dependencies": {
-    "electron": "^10.2.0",
+    "electron": "^11.5.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "tailwindcss": "^2.0.1"
