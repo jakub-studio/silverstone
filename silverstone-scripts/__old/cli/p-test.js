@@ -22,4 +22,4 @@ console.log(Progress({
 	value: { current: 10, max: 10 },
 	width: 20,
 	showPercentage: true
-}));
+}) + " Succesfully completed all builds.");

@@ -12,43 +12,31 @@
   },
   "scripts": {
     "start": "electron .",
-    "build": "node silverstone-scripts build",
+    "build": "node silverstone-scripts/__internal__/run build",
     "start-web": "node silverstone-scripts start-web",
-    "security": "node silverstone-scripts security",
-    "cli-test": "node silverstone-scripts/cli/p-test",
-    "__do_not_use_exec_build__": "node silverstone-scripts/cmds/build/exec_build.js"
+    "cli-test": "node silverstone-scripts/__internal__/cli/test"
   },
   "dependencies": {
-    "electron": "^10.2.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "tailwindcss": "^2.0.1"
+    "electron": "^13.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "silverstone": "file:./silverstone-scripts/__internal__",
+    "tailwindcss": "^2.2.8"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
-    "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/preset-react": "^7.12.10",
     "@babel/preset-typescript": "^7.12.7",
-    "@doyensec/electronegativity": "^1.7.0",
-    "@types/react": "^16.9.56",
-    "@types/react-dom": "^16.9.9",
-    "autoprefixer": "^10.1.0",
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.9",
+    "autoprefixer": "^10.3.3",
     "babel-loader": "^8.2.1",
-    "chalk": "^4.1.0",
-    "concurrently": "^5.3.0",
     "css-loader": "^5.0.1",
-    "fibers": "^5.0.0",
     "html-webpack-plugin": "^5.0.0-beta.5",
-    "minimist": "^1.2.5",
-    "ms": "^2.1.3",
-    "open": "^7.3.1",
-    "postcss": "^8.2.10",
+    "postcss": "^8.3.6",
     "postcss-loader": "^4.1.0",
-    "sass": "^1.32.5",
-    "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
-    "typescript": "^4.0.5",
-    "webpack": "^5.4.0",
-    "webpack-merge": "^5.4.0"
+    "typescript": "^4.4.2",
+    "webpack": "^5.51.1"
   }
 }

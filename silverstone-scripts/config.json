@@ -1,0 +1,53 @@
+{
+	"$schema": "./__internal__/config_schema.json",
+	"variables": {
+		"csp": {
+			"development": "",
+			"production": ""
+		},
+		"reactRootId": "app-mount",
+		"htmlTemplateParamters": {
+			"appName": "silverstone starter app"
+		}
+	},
+	"options": {
+		"mergeWebpackDefinePluginDefinitions": true,
+		"compilerOutputPercentage": true
+	},
+	"configs": {
+		"env": {
+			"development": ["./env/development.js", { "aliases": ["d", "dev"] }],
+			"production": ["./env/production.js", { "aliases": ["p", "prod"] }]
+		},
+		"targets": {
+			"base": ["./targets/base.js", {
+				"dependency": true
+			}],
+			"electron-base": ["./targets/electron_base.js", {
+				"dependency": true,
+				"inherits": "base"
+			}],
+			"electron-main": ["./targets/electron_main.js", {
+				"inherits": "electron-base",
+				"aliases": "e-m"
+			}],
+			"electron-preload": ["./targets/electron_preload.js", {
+				"inherits": "electron-base",
+				"aliases": "e-p"
+			}],
+			"electron-renderer": ["./targets/electron_renderer.js", {
+				"inherits": "electron-base",
+				"aliases": "e-r"
+			}],
+			"web": ["./targets/web.js", {
+				"aliases": ["w", "browser", "b"]
+			}]
+		},
+		"targetGroups": {
+			"electron-all": {
+				"configs": ["electron-main", "electron-preload", "electron-renderer"],
+				"aliases": "e-*"
+			}
+		}
+	}
+}

@@ -48,9 +48,6 @@ module.exports = {
 					}
 				}
 			]
-		}, {
-			test: /\.include$/i,
-			use: ["raw-loader"]
 		}]
 	},
 }

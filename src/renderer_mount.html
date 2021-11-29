@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<title><%= appName %></title>
-		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'">
+		<meta http-equiv="Content-Security-Policy" content="<%= contentSecurityPolicy %>">
 		<!-- Renderer script is inserted automatically by HtmlWebpackPlugin, do not add manually. -->
 	</head>
 	<body>
-		<div id="<%= __REACT_ROOT__ %>"></div>
+		<div id="<%= reactRootId %>"></div>
 	</body>
 </html>

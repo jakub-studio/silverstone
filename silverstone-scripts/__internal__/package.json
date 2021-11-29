@@ -1,0 +1,22 @@
+{
+	"name": "silverstone",
+	"version": "1.0.0",
+	"description": "silverstone electron boilerplate",
+	"repository": "https://github.com/jakuski/silverstone",
+	"author": "jakuski",
+	"license": "MIT",
+	"private": true,
+	"engines": {
+		"node": ">=12.13.0"
+	},
+	"bin": {
+		"sstn": "./bin/silverstone"
+	},
+	"dependencies": {
+		"webpack-merge": "^5.8.0",
+		"open": "^8.2.1",
+		"chalk": "^4.1.0",
+		"ms": "^2.1.3",
+		"minimist": "^1.2.5"
+	}
+}

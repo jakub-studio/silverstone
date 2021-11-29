@@ -21,13 +21,5 @@ module.exports = {
 				__REACT_ROOT__: misc.reactRootId
 			}, misc.htmlTemplateParams)
 		})
-	],
-	cache: {
-		type: "filesystem",
-		name: "electron_renderer",
-		cacheDirectory: require("path").join(process.cwd(), "build-cache"),
-		buildDependencies: {
-			config: [__filename]
-		}
-	}
+	]
 }

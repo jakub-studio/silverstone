@@ -3,7 +3,6 @@ const nodeInspect = require("util").inspect;
 
 const build = require("./cmds/build");
 const startWeb = require("./cmds/start-web");
-const runSecurityCheck = require("./cmds/security");
 
 const command = process.argv[2].toLowerCase();
 const args = require("minimist")(process.argv.splice(3));
@@ -34,8 +33,5 @@ switch (command) {
 		break;
 	case "start-web":
 		startWeb();
-		break;
-	case "security":
-		runSecurityCheck();
 		break;
 }

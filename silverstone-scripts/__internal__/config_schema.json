@@ -1,0 +1,49 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Silverstone Config Schema",
+	"$comment": "tbd: Since silverstone is designed to be extendible by the user, should we restrict additionalProperties in certain instances and introduce a larger hassle for extending schemas?",
+	"$defs": {
+		"alias": {
+			"description": "Aliases for this item. Can be either a string or string array containing multiple aliases for the same item."
+		},
+		"configDeclarationObject": {
+			"type": "object",
+			"additionalProperties": {
+
+			}
+		}
+	},
+	"type": "object",
+	"required": ["configs"],
+	"properties": {
+		"$schema": {
+			"type": "string",
+			"description": "URL of the config schema file. Helps ensure valid object formatting and structure."
+		},
+		"configs": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"env": { "$ref": "#/$defs/configDeclarationObject" },
+				"targets": { "$ref": "#/$defs/configDeclarationObject" },
+
+				"targetGroups": {
+					"type": "object",
+					"description": "Groups are designed to shorten length of commands. A command such as 'electron-all' can trigger builds for 'electron-main', 'electron-preload' and 'electron-renderer'. Aliases can also be passed for groups.",
+					"additionalProperties": {
+						"type": "object",
+						"required": ["configs"],
+						"properties": {
+							"configs": {
+								"type": "array",
+								"items": { "type": "string" },
+								"minItems": 1
+							},
+							"aliases": { "$ref": "#/$defs/alias" }
+						}
+					}
+				}
+			}
+		}
+	}
+}

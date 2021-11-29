@@ -1,24 +1,35 @@
 import { app, BrowserWindow } from "electron";
 import { join } from "path";
 
-function createWindow() {
+function createWindow(): BrowserWindow {
 	// Create the browser window.
 	const mainWindow = new BrowserWindow({
 		width: 800,
 		height: 600,
 		webPreferences: {
-			preload: join(__dirname, __SS_FILENAME_PRELOAD__),
-			contextIsolation: true
+			preload: join(__dirname, "preload.js"),
+			contextIsolation: true,
+			sandbox: true
 		}
-	})
+	});
 
 	// and load the index.html of the app.
 	mainWindow.loadFile(
-		join(__dirname, __SS_FILENAME_RENDERER_MOUNT__)
-	)
+		join(__dirname, "renderer_mount.html")
+	);
+
+	// Prevent the window from navigating to somewhere unintentionally.
+	// If you are using routing within your app, customise the event handler
+	// below to ensure that the window only visits whitelisted locations.
+
+	mainWindow.webContents.on("will-navigate", (event, url) => {
+		event.preventDefault();
+	});
 
 	// Open the DevTools.
 	// mainWindow.webContents.openDevTools()
+
+	return mainWindow;
 }
 
 // This method will be called when Electron has finished

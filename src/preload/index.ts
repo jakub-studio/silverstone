@@ -10,4 +10,4 @@ contextBridge.exposeInMainWorld("preload_api", {
 	getElectronVersion (): string {
 		return process.versions.electron;
 	}
-})
+});
