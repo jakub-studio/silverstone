@@ -10,7 +10,7 @@
 
 ## What is silverstone?
 ---
-some good shit.
+Concurrent webpack script runner
 
 
 ## Technologies featured:
